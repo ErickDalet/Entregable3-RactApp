@@ -1,0 +1,108 @@
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.cajaheader{
+  width: 100%;
+  text-align: right;
+  color: yellow;
+}
+.cajaAcciones2{
+  width: 49%;
+  background-color:beige;
+  float: left;
+  margin-right: 1px;
+  border-radius: 10px;
+}
+.cajaAcciones1{
+  width: 49%;
+  margin-left: 1px;
+  background-color: beige;
+  float: right;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.encabezado {
+  background-color: #004d40;;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items:right;
+  padding-left: 10px;
+  
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.menu {
+  background-color: #004d40;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  align-items:right;
+  padding-left: 10px;
+  
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.pie {
+  background-color: #004d40;
+  min-height: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items:right;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.caja{
+  width: 80%;
+  margin:10px;
+}
+.cajaTamaño{
+  width: 80%;
+}
+.cajaDerecha{
+  position: absolute;
+  top:91.5%;
+  left: 95%;
+}
+.imgMenu{
+  width: 80%;
+  height: auto;
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
