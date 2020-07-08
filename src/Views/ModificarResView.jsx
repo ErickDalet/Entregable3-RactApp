@@ -288,7 +288,7 @@ class ModificarResView extends Component {
 
          
         this.loadRestaurant();
-
+        window.location.reload();
         /*this.frmNombreRestaurant.value="";
         this.frmNombreRestaurant.focus();
 
