@@ -6,6 +6,8 @@ import { Fab, TextField } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Footer from "../Componentes/footer";
 
+
+
 class AgregarCartaView extends Component {
     constructor(props){
         super(props);
@@ -27,12 +29,27 @@ class AgregarCartaView extends Component {
         frmPrecio = React.createRef();
         frmExtra = React.createRef();
         frmTipo = React.createRef();
+        frmImagenView = React.createRef();
+
+        verPath = event =>{
+            event.preventDefault();
+            console.log(this.frmFoto.value);
+        }
+
+        onImageChange = (event) => {
+            if (event.target.files && event.target.files[0]) {
+              this.setState({
+                image: URL.createObjectURL(event.target.files[0])
+              });
+            }
+           }
         
         addCarta = event =>{     
             event.preventDefault();
-            if(!this.frmNombreCarta.value =="")
+            if(!this.frmNombreCarta.value == " ")
                 {
-                    const url='http://localhost:4000/api/cartas';
+                    //const url='http://localhost:4000/api/cartas';
+                    const url='https://lecarte-api1.us-south.cf.appdomain.cloud/api/cartas';
                     const data={nombre:this.frmNombreCarta.value,
                         ingredientes:this.frmIngredientes.value,
                         alergenos:this.frmAlergenos.value,
@@ -83,7 +100,8 @@ class AgregarCartaView extends Component {
             this.frmTipo.value="";
         }
         loadCarta(){
-            fetch("http://localhost:4000/api/cartas")
+            //fetch("http://localhost:4000/api/cartas")
+            fetch("https://lecarte-api1.us-south.cf.appdomain.cloud/api/cartas")
             .then((response)=>response.json())
             .then((json)=>this.setState({restaurant:json}))
             .catch(error=>console.log(error));
@@ -103,13 +121,13 @@ class AgregarCartaView extends Component {
                         <Menu/>
                     </div>
                     <div className="col-md-9">
-                        <div class="card">
-                            <div class="card-header bg-info text-white">
+                        <div className="card">
+                            <div className="card-header bg-info text-white">
                                 Agregar Carta. 
                             </div>
-                            <div class="card-body bg-light">
-                                <h5 class="card-title">Datos del Platillo</h5>
-                                <form autoComplete="off" onSubmit={this.addCarta} >
+                            <div className="card-body bg-light">
+                                <h5 className="card-title">Datos del Platillo</h5>
+                                <form autoComplete="off" onSubmit={this.addCarta} encType="multipart/form-data">
                                     <Grid container spacing={3}>
                                     <Grid item xs={6} sm={6}>
                                     <TextField
@@ -151,16 +169,7 @@ class AgregarCartaView extends Component {
                                             inputRef={e => (this.frmTiempoPrep = e)}
                                         />
                                     </Grid>
-                                    <Grid item xs={6} sm={6}>
-                                    <TextField
-                                            className="cajaTamaño"
-                                            label="Foto"
-                                            type="text"
-                                            margin="normal"
-                                            variant="outlined"
-                                            inputRef={e => (this.frmFoto = e)}
-                                        />
-                                    </Grid>
+                                    
                                     <Grid item xs={6} sm={6}>
                                     <TextField
                                             className="cajaTamaño"
@@ -191,7 +200,31 @@ class AgregarCartaView extends Component {
                                             inputRef={e => (this.frmTipo = e)}
                                         />
                                     </Grid>
+                                
+                                    <Grid item xs={6} sm={6}>
+                                        <div className="container">
+                                            <div className="row">
+                                                    <div id="div_file">
+                                                    <p id="texto_file">Elige Una Fotografía: </p>
+                                                    <input 
+                                                        type="file" 
+                                                        id="imgPicker" 
+                                                        onChange={this.onImageChange}
+                                                        className="fileType"
+                                                        accept="image/*"
+                                                        
+                                                        
+                                                        /></div>
+                                                        <div>
+                                                            <img id="target" src={this.state.image} className="imgFile" alt=""/>
+                                                        </div>    
+                                            </div>
+                                        </div>                
+                                    </Grid>
+                                    
                                 </Grid> 
+
+                                
                                 <div className="cajaDerecha">
                                     <Fab
                                         color="primary"

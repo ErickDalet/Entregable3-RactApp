@@ -105,7 +105,8 @@ class ModificarResView extends Component {
             {
 
                     if(!this.state.edit){
-                        const url='http://localhost:4000/api/restaurants';
+                        //const url='http://localhost:4000/api/restaurants';
+                        const url = 'https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants';
                         const data={nombre:this.frmNombreRestaurant.value,
                             direccion:this.frmDireccion.value,
                             localidad:this.frmLocalidad.value,
@@ -147,7 +148,8 @@ class ModificarResView extends Component {
                     }
                     else{
                         
-                        const url='http://localhost:4000/api/restaurants/'+this.state.id;
+                        //const url='http://localhost:4000/api/restaurants/'+this.state.id;
+                        const url = 'https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants';
                         const data={nombre:this.frmNombreRestaurant.value,
                             direccion:this.frmDireccion.value,
                             localidad:this.frmLocalidad.value,
@@ -269,7 +271,8 @@ class ModificarResView extends Component {
     deleteRestaurant = (id)=>event=>{
         event.preventDefault();
         console.log(id);
-        const url=`http://localhost:4000/api/restaurants/${id}`;
+        //const url=`http://localhost:4000/api/restaurants/${id}`;
+        const url = `https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants/{id}`;
         console.log(url);
         /*fetch(url, {
             method: 'DELETE'
@@ -302,7 +305,8 @@ class ModificarResView extends Component {
         .then((response)=>response.json())
         .then((json)=>this.setState({restaurant:json}))
         .catch(error=>console.log(error));*/
-        Axios.get('http://localhost:4000/api/restaurants')
+        //Axios.get('http://localhost:4000/api/restaurants')
+        Axios.get('https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants')
         .then(res=>{
             this.setState({restaurant: res.data});
             console.log(res.data);
@@ -339,6 +343,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmNombreRestaurant = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                             
                                 <TextField
@@ -349,6 +354,7 @@ class ModificarResView extends Component {
                                         margin="normal"
                                         variant="outlined"
                                         inputRef={e => (this.frmDireccion = e)}
+                                        InputLabelProps={{shrink:true}}
                                     />
                             
                             <TextField
@@ -359,6 +365,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmLocalidad = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                            
                             <TextField
@@ -369,6 +376,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmMunicipio = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                            
                             <TextField
@@ -379,6 +387,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmEstado = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                             
                             <TextField
@@ -389,6 +398,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmCp = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                             
                             <TextField
@@ -399,6 +409,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmRazonSocial = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                             
                             <TextField
@@ -409,6 +420,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmRFC = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                             
                             <TextField
@@ -419,6 +431,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmEmail = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                             
                             <TextField
@@ -429,6 +442,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmFacebook = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                             
                             <TextField
@@ -439,6 +453,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmWhatsapp = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                            
                             <TextField
@@ -449,6 +464,7 @@ class ModificarResView extends Component {
                                     margin="normal"
                                     variant="outlined"
                                     inputRef={e => (this.frmServicioDom = e)}
+                                    InputLabelProps={{shrink:true}}
                                 />
                         </div>
                         <div className="cajaAcciones2">

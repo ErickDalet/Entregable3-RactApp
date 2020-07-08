@@ -47,7 +47,8 @@ import {
                 {
     
                         if(!this.state.edit){
-                            const url='http://localhost:4000/api/cartas';
+                            //const url='http://localhost:4000/api/cartas';
+                            const url='https://lecarte-api1.us-south.cf.appdomain.cloud/api/cartas';
                             const data={nombre:this.frmNombreCarta.value,
                                 ingredientes:this.frmIngredientes.value,
                                 alergenos:this.frmAlergenos.value,
@@ -62,7 +63,8 @@ import {
                             .then(res=>console.log(res.data));
                         }
                         else{
-                            const url='http://localhost:4000/api/cartas/'+this.state.id;
+                            //const url='http://localhost:4000/api/cartas/'+this.state.id;
+                            const url='https://lecarte-api1.us-south.cf.appdomain.cloud/api/cartas/'+this.state.id;
                             const data={nombre:this.frmNombreCarta.value,
                                 ingredientes:this.frmIngredientes.value,
                                 alergenos:this.frmAlergenos.value,
@@ -147,7 +149,8 @@ import {
          deleteCarta = (id)=>event=>{
             event.preventDefault();
             console.log(id);
-            const url=`http://localhost:4000/api/cartas/${id}`;
+            //const url=`http://localhost:4000/api/cartas/${id}`;
+            const url=`https://lecarte-api1.us-south.cf.appdomain.cloud/api/cartas/${id}`;
             console.log(url);
 
             Axios.delete(url)
@@ -157,7 +160,8 @@ import {
         }
 
         loadCarta(){
-            Axios.get('http://localhost:4000/api/cartas')
+            //Axios.get('http://localhost:4000/api/cartas')
+            Axios.get('https://lecarte-api1.us-south.cf.appdomain.cloud/api/cartas')
             .then(res=>{
                 this.setState({carta: res.data});
                 console.log(res.data);
@@ -194,6 +198,7 @@ import {
                                             margin="normal"
                                             variant="outlined"
                                             inputRef={e => (this.frmNombreCarta = e)}
+                                            InputLabelProps={{shrink:true}}
                                         />
                                     
                                         <TextField
@@ -204,6 +209,7 @@ import {
                                                 margin="normal"
                                                 variant="outlined"
                                                 inputRef={e => (this.frmIngredientes = e)}
+                                                InputLabelProps={{shrink:true}}
                                             />
                                     
                                     <TextField
@@ -214,6 +220,7 @@ import {
                                             margin="normal"
                                             variant="outlined"
                                             inputRef={e => (this.frmAlergenos = e)}
+                                            InputLabelProps={{shrink:true}}
                                         />
                                    
                                     <TextField
@@ -224,6 +231,7 @@ import {
                                             margin="normal"
                                             variant="outlined"
                                             inputRef={e => (this.frmTiempoPrep = e)}
+                                            InputLabelProps={{shrink:true}}
                                         />
                                    
                                     <TextField
@@ -234,6 +242,7 @@ import {
                                             margin="normal"
                                             variant="outlined"
                                             inputRef={e => (this.frmFoto = e)}
+                                            InputLabelProps={{shrink:true}}
                                         />
                                     
                                     <TextField
@@ -244,6 +253,7 @@ import {
                                             margin="normal"
                                             variant="outlined"
                                             inputRef={e => (this.frmPrecio = e)}
+                                            InputLabelProps={{shrink:true}}
                                         />
                                     
                                     <TextField
@@ -254,6 +264,7 @@ import {
                                             margin="normal"
                                             variant="outlined"
                                             inputRef={e => (this.frmExtra = e)}
+                                            InputLabelProps={{shrink:true}}
                                         />
                                     
                                     <TextField
@@ -264,6 +275,7 @@ import {
                                             margin="normal"
                                             variant="outlined"
                                             inputRef={e => (this.frmTipo = e)}
+                                            InputLabelProps={{shrink:true}}
                                         />
                                     
                                     

@@ -13,6 +13,7 @@
   width: 100%;
   text-align: right;
   color: yellow;
+  padding-right: 10px;
 }
 .cajaAcciones2{
   width: 49%;
@@ -60,7 +61,8 @@
   display: flex;
   flex-direction: column;
   align-items:right;
-  padding-left: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
   
   font-size: calc(10px + 2vmin);
   color: white;
@@ -88,16 +90,17 @@
   left: 95%;
 }
 .imgMenu{
-  width: 80%;
-  height: auto;
+  width: 100%;
   border-radius: 100%;
-  margin-bottom: 10px;
+  padding: 4%;
 }
 
 .App-link {
   color: #61dafb;
 }
-
+.fondo{
+  background-color: beige;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -105,4 +108,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+p#texto_file{
+  text-align: center;
+  color: white;
+
+}
+div#div_file{
+  position: relative;
+  align-items: flex-start;
+  padding: 10px;
+  width: 250px;
+  height: 40px;
+  background-color: #1c75ac;
+  border-radius:5px;
+  box-shadow: 0px 3px 0px #02273d;
+  cursor: pointer;
+  
+   
+}
+div#div_file:hover{
+  box-shadow: 0px 3px 0px #1c75ac ;
+  background-color: #02273d;
+}
+
+input#imgPicker{
+  position: absolute;
+  top:0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.imgFile{
+  width: 250px;
+  border-radius: 50px 0px 50px 0px;
+  padding-left: 10px;
 }

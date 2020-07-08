@@ -1,9 +1,10 @@
 import React from 'react';
+import FooterView from '../Views/footerView';
 
 const footer = () => {
     return ( 
         <div className="pie">
-            footer
+            <FooterView/>
         </div>
      );
 }

@@ -5,6 +5,7 @@ import Menu from "../Componentes/menu";
 import { Fab, TextField } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import Footer from "../Componentes/footer";
+import Generador from '../TypeScript/Generador';
 
 /*
   var restaurantesList=[
@@ -78,6 +79,22 @@ class AgregarResView extends Component {
         frmFacebook = React.createRef();
         frmWhatsapp = React.createRef();
         frmServicioDom = React.createRef();
+        
+
+
+        onImageChange = (event) => {
+            var imagen =0 ;
+            if (event.target.files && event.target.files[0]) {
+                imagen=URL.createObjectURL(event.target.files[0]); 
+                console.log(imagen); 
+              this.setState({
+                image: URL.createObjectURL(event.target.files[0])
+                   
+              }
+              );
+            }
+        
+           }
 
     /*   
     //}
@@ -124,7 +141,8 @@ class AgregarResView extends Component {
 
         if(!this.frmNombreRestaurant.value =="")
             {
-                const url='http://localhost:4000/api/restaurants';
+                //const url='http://localhost:4000/api/restaurants';
+                const url = 'https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants';
                 const data={nombre:this.frmNombreRestaurant.value,
                     direccion:this.frmDireccion.value,
                     localidad:this.frmLocalidad.value,
@@ -228,7 +246,8 @@ class AgregarResView extends Component {
         this.frmServicioDom.value="";
     }
     loadRestaurant(){
-        fetch("http://localhost:4000/api/restaurants")
+        //fetch("http://localhost:4000/api/restaurants")
+        fetch('https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants')
         .then((response)=>response.json())
         .then((json)=>this.setState({restaurant:json}))
         .catch(error=>console.log(error));
@@ -248,12 +267,12 @@ class AgregarResView extends Component {
             <div className="col-md-2">
                 <Menu/>
             </div>
-            <div className="col-md-9">
-                <div class="card">
+            <div className="col-md-9 ">
+                <div class="card center-block">
                     <div class="card-header bg-info text-white">
                         Agregar Restaurant. 
                     </div>
-                    <div class="card-body bg-light">
+                    <div class="card-body fondo">
                         <h5 class="card-title">Datos del Restaurant</h5>
                         <form autoComplete="off" onSubmit={this.addRestaurant} >
                             <Grid container spacing={3}>
@@ -376,6 +395,29 @@ class AgregarResView extends Component {
                                     variant="outlined"
                                     inputRef={e => (this.frmServicioDom = e)}
                                 />
+                            </Grid>
+                            <Grid>
+                            <div className="container">
+                                            <div className="row">
+                                                    <div id="div_file">
+                                                    <p id="texto_file">Sube Tu Logotipo: </p>
+                                                    <input 
+                                                        type="file" 
+                                                        id="imgPicker" 
+                                                        onChange={this.onImageChange}
+                                                        className="fileType"
+                                                        accept="image/*"
+                                                        
+                                                        
+                                                        /></div>
+                                                        <div>
+                                                            <img id="target" src={this.state.image} className="imgFile" alt=""/>
+                                                        </div>    
+                                            </div>
+                                        </div> 
+                            </Grid>
+                            <Grid>
+                                <Generador></Generador>
                             </Grid>
                         </Grid> 
                         <div className="cajaDerecha">
