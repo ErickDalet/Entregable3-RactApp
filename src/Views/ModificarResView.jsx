@@ -272,7 +272,7 @@ class ModificarResView extends Component {
         event.preventDefault();
         console.log(id);
         //const url=`http://localhost:4000/api/restaurants/${id}`;
-        const url = `https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants/{id}`;
+        const url = `https://lecarte-api1.us-south.cf.appdomain.cloud/api/restaurants/${id}`;
         console.log(url);
         /*fetch(url, {
             method: 'DELETE'
