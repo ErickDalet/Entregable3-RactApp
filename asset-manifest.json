@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Entregable3-RactApp/static/css/main.bae86081.chunk.css",
+    "main.js": "/Entregable3-RactApp/static/js/main.0a76b303.chunk.js",
+    "main.js.map": "/Entregable3-RactApp/static/js/main.0a76b303.chunk.js.map",
+    "runtime-main.js": "/Entregable3-RactApp/static/js/runtime-main.bb6aa16e.js",
+    "runtime-main.js.map": "/Entregable3-RactApp/static/js/runtime-main.bb6aa16e.js.map",
+    "static/js/2.8d0790f3.chunk.js": "/Entregable3-RactApp/static/js/2.8d0790f3.chunk.js",
+    "static/js/2.8d0790f3.chunk.js.map": "/Entregable3-RactApp/static/js/2.8d0790f3.chunk.js.map",
+    "index.html": "/Entregable3-RactApp/index.html",
+    "precache-manifest.24d54cd17b7b10209d197ef10fb50254.js": "/Entregable3-RactApp/precache-manifest.24d54cd17b7b10209d197ef10fb50254.js",
+    "service-worker.js": "/Entregable3-RactApp/service-worker.js",
+    "static/css/main.bae86081.chunk.css.map": "/Entregable3-RactApp/static/css/main.bae86081.chunk.css.map",
+    "static/js/2.8d0790f3.chunk.js.LICENSE.txt": "/Entregable3-RactApp/static/js/2.8d0790f3.chunk.js.LICENSE.txt",
+    "static/media/adm1.png": "/Entregable3-RactApp/static/media/adm1.ed59e2d5.png",
+    "static/media/inicio.jpg": "/Entregable3-RactApp/static/media/inicio.4cd045df.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bb6aa16e.js",
+    "static/js/2.8d0790f3.chunk.js",
+    "static/css/main.bae86081.chunk.css",
+    "static/js/main.0a76b303.chunk.js"
+  ]
+}
